@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Scale.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Scale.Views.WeightView">
+  <Design.DataContext>
+    <vm:WeightViewModel/>
+  </Design.DataContext>
+  
+  <StackPanel HorizontalAlignment="Center">
+    <TextBlock Margin="60,10,0,0" FontSize="148" FontFamily="Arial" Text="{Binding CurrentWeight}"></TextBlock>
+  <Button FontSize="48" Content="Siguiente" IsEnabled="False" />
+    <Button FontSize="12" Content="Siguiente" IsEnabled="True" Click="OnClickChangeWeight" />
+  </StackPanel>
+</UserControl>
