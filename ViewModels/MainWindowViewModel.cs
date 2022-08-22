@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using Scale.Models;
 using Scale.Views;
 using System.Device.Gpio;
 using System.Threading;
@@ -31,6 +32,18 @@ namespace Scale.ViewModels
             }
         }
 
+        //public void GoNext()
+        //{
+        //    var recipe = new Recipe() { Name = "Fragancia Suave" };
+        //    var recipeItem = new RecipeItem() { Name = "Alcohol", MaxAllowedWeight = 5000, MinRequiredWeight = 3800, IdealWeight = 4250 };
+        //    recipe.Items.Add(recipeItem);
+        //    recipeItem = new RecipeItem() { Name = "Potasio", MaxAllowedWeight = 2000, MinRequiredWeight = 1000, IdealWeight = 1500 };
+        //    recipe.Items.Add(recipeItem);
+
+
+        //    Content = new WeightViewModel(recipe, 1);
+
+        //}
         public void AddItem()
         {
             //int pin = 18;
@@ -44,7 +57,9 @@ namespace Scale.ViewModels
             //    ledOn = !ledOn;
             //}
 
-            Content = new WeightViewModel();
+
+
+            Content = new WeightViewModel(Program.GetSampleRecipe());
         }
     }
 }

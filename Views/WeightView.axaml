@@ -8,10 +8,48 @@
   <Design.DataContext>
     <vm:WeightViewModel/>
   </Design.DataContext>
-  
+  <StackPanel>
+    <DockPanel>
+      <!--<TextBlock Text="ID: " FontWeight="ExtraBold" FontSize="16"></TextBlock>
+      <TextBlock Text="{Binding ScaleId}" FontSize="16"></TextBlock>-->
+      <TextBlock Text="Balanza: " FontSize="16"></TextBlock>
+      <TextBlock Text="{Binding ScaleName}" FontSize="16"></TextBlock>
+    </DockPanel>
+    <StackPanel>
+      <TextBlock Text="Ingrediente" FontSize="16" ></TextBlock>
+      <TextBlock Text="{Binding RecipeItem.Name}" FontSize="32" FontWeight="Bold" ></TextBlock>
+    </StackPanel>
+    <DockPanel>
+      <Grid ColumnDefinitions="100,100,100" RowDefinitions="Auto,Auto,Auto" Margin="4">
+        <TextBlock Text="Cantidad" FontSize="16" Grid.Row="0" Grid.Column="0"></TextBlock>
+        <TextBlock Text="{Binding RecipeItem.IdealWeight}" FontSize="32" FontWeight="Bold" Grid.Row="1" Grid.Column="0"></TextBlock>
+        <TextBlock Text="Minimo" FontSize="16" Grid.Row="0" Grid.Column="1"></TextBlock>
+        <TextBlock Text="{Binding RecipeItem.MinRequiredWeight}" FontSize="32" FontWeight="Bold" Grid.Row="1" Grid.Column="1"></TextBlock>
+        <TextBlock Text="Maximo" FontSize="16" Grid.Row="0" Grid.Column="2"></TextBlock>
+        <TextBlock Text="{Binding RecipeItem.MaxAllowedWeight}" FontSize="32" FontWeight="Bold" Grid.Row="1" Grid.Column="2"></TextBlock>
+      </Grid>
+
+      <!--<StackPanel>
+      <TextBlock Text="Ingrediente" FontSize="16"></TextBlock>
+      <TextBlock Text="{Binding ItemName}" FontSize="32" FontWeight="Bold"></TextBlock>
+      </StackPanel>      
+      <StackPanel>
+      <TextBlock Text="Cantidad" FontSize="16"></TextBlock>
+      <TextBlock Text="{Binding IdealWeight}" FontSize="32" FontWeight="Bold"></TextBlock>
+      </StackPanel>
+      <StackPanel>
+      <TextBlock Text="Min" FontSize="16"></TextBlock>
+      <TextBlock Text="{Binding MinWeight}" FontSize="32" FontWeight="Bold"></TextBlock>
+      </StackPanel>
+      <StackPanel>
+      <TextBlock Text="Max" FontSize="16"></TextBlock>
+      <TextBlock Text="{Binding MaxWeight}" FontSize="32" FontWeight="Bold"></TextBlock>
+      </StackPanel>-->
+    </DockPanel>
   <StackPanel HorizontalAlignment="Center">
-    <TextBlock Margin="60,10,0,0" FontSize="148" FontFamily="Arial" Text="{Binding CurrentWeight}"></TextBlock>
-  <Button FontSize="48" Content="Siguiente" IsEnabled="False" />
+    <TextBlock Margin="60,10,0,0" Background="{Binding WeightBgColor}" Foreground="{Binding WeightFgColor}" FontSize="148" FontFamily="Arial" Text="{Binding CurrentWeight}"></TextBlock>
+    <Button FontSize="48" Content="Siguiente" IsEnabled="{Binding CanContinue}" Command="{Binding GoNext}"  />
     <Button FontSize="12" Content="Siguiente" IsEnabled="True" Click="OnClickChangeWeight" />
   </StackPanel>
+      </StackPanel>
 </UserControl>

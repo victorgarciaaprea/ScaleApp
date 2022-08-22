@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.ReactiveUI;
+using Scale.Models;
 using System;
 
 namespace Scale
@@ -19,5 +20,16 @@ namespace Scale
                 .UsePlatformDetect()
                 .LogToTrace()
                 .UseReactiveUI();
+
+
+        internal static Recipe GetSampleRecipe()
+        {
+            var recipe = new Recipe() { Name = "Fragancia Suave" };
+            var recipeItem = new RecipeItem() { Name = "Alcohol", MaxAllowedWeight = 5000, MinRequiredWeight = 3800, IdealWeight = 4250 };
+            recipe.Items.Add(recipeItem);
+            recipeItem = new RecipeItem() { Name = "Potasio", MaxAllowedWeight = 2000, MinRequiredWeight = 1000, IdealWeight = 1500 };
+            recipe.Items.Add(recipeItem);
+            return recipe;
+        }
     }
 }

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scale", "Scale.csproj", "{B919D348-9425-49CA-BE16-E259A9751324}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX711DotNet", "..\HX711DotNet\HX711DotNet\HX711DotNet.csproj", "{4C99ECC8-346C-4AC1-8A2E-414004A16D19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B919D348-9425-49CA-BE16-E259A9751324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B919D348-9425-49CA-BE16-E259A9751324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B919D348-9425-49CA-BE16-E259A9751324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B919D348-9425-49CA-BE16-E259A9751324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C99ECC8-346C-4AC1-8A2E-414004A16D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C99ECC8-346C-4AC1-8A2E-414004A16D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C99ECC8-346C-4AC1-8A2E-414004A16D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C99ECC8-346C-4AC1-8A2E-414004A16D19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {215B685C-262D-45A4-96EF-259BB0BA258F}
+	EndGlobalSection
+EndGlobal
