@@ -25,7 +25,7 @@ namespace Scale
         internal static Recipe GetSampleRecipe()
         {
             var recipe = new Recipe() { Name = "Fragancia Suave" };
-            var recipeItem = new RecipeItem() { Name = "Alcohol", MaxAllowedWeight = 5000, MinRequiredWeight = 3800, IdealWeight = 4250 };
+            var recipeItem = new RecipeItem() { Name = "Alcohol", MaxAllowedWeight = 5000, MinRequiredWeight = 3800, IdealWeight = 4250, WeightSettings = new WeightSettings() { AllowWeightOverload = true } };
             recipe.Items.Add(recipeItem);
             recipeItem = new RecipeItem() { Name = "Potasio", MaxAllowedWeight = 2000, MinRequiredWeight = 1000, IdealWeight = 1500 };
             recipe.Items.Add(recipeItem);

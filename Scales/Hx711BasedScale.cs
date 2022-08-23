@@ -46,7 +46,10 @@ namespace Scale.Scales
                     val = 0;
 
                 currentWeight = val;
-                ValueChanged(this, new EventArgs());
+                if (ValueChanged != null)
+                {
+                    ValueChanged(this, new EventArgs());
+                }
 
                 //dc.CurrentWeight = val;
                 //UpdateState(dc);

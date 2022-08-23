@@ -76,7 +76,6 @@ namespace Scale.ViewModels
 
             this.scale.ValueChanged += Scale_ValueChanged;
             await this.scale.Start();
-
         }
 
         private void Scale_ValueChanged(object? sender, EventArgs e)
@@ -104,6 +103,7 @@ namespace Scale.ViewModels
             // if we just handled the last recipe item then we need to a "finished" recipe view
             if (itemCount == recipe.Items.Count)
             {
+                this.scale.ValueChanged -= Scale_ValueChanged;
                 ShowWeight = false;
                 BigButtonText = "Finalizar";
                 //mainWindowViewModel.NavigateTo(new LoginViewModel());
@@ -235,10 +235,20 @@ namespace Scale.ViewModels
             }
             else
             {
-                WeightFgColor = AppSettings.ErrorWeightFgColor;
-                WeightBgColor = AppSettings.ErrorWeightBgColor;
-                CanContinue = false;
+                if (!IsWeightOverloadAllowed())
+                {
+                    WeightFgColor = AppSettings.ErrorWeightFgColor;
+                    WeightBgColor = AppSettings.ErrorWeightBgColor;
+                    CanContinue = false;
+                }
             }
+        }
+
+        bool IsWeightOverloadAllowed()
+        {
+            var allowOverloadSetting = recipeItem.WeightSettings ?? recipe.WeightSettings;
+
+            return allowOverloadSetting?.AllowWeightOverload ?? false;
         }
 
     }

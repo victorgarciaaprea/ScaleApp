@@ -48,7 +48,7 @@
     </DockPanel>
   <StackPanel HorizontalAlignment="Center">
     <TextBlock Margin="60,10,0,0" IsVisible="{Binding ShowWeight}" Background="{Binding WeightBgColor}" Foreground="{Binding WeightFgColor}" FontSize="148" FontFamily="Arial" Text="{Binding CurrentWeight}"></TextBlock>
-    <Button FontSize="48" Content="Siguiente" IsEnabled="{Binding CanContinue}" Command="{Binding GoNext}"  />
+    <Button FontSize="48" Content="{Binding BigButtonText}"  IsEnabled="{Binding CanContinue}" Command="{Binding GoNext}"  />
     <Button FontSize="12" Content="{Binding BigButtonText}" IsEnabled="True" Click="OnClickChangeWeight" />
   </StackPanel>
       </StackPanel>

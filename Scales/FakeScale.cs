@@ -26,8 +26,11 @@ namespace Scale.Scales
             while (true)
             {
                 currentWeight = new Random().Next(0, 10000);
-                ValueChanged(this, new EventArgs());
-                await Task.Delay(2000);
+                if (ValueChanged != null)
+                {
+                    ValueChanged(this, new EventArgs());
+                }
+                await Task.Delay(1000);
 
             }
         }
