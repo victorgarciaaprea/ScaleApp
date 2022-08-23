@@ -14,5 +14,6 @@ namespace Scale
         static public string IdealWeightFgColor = "Green";
         static public string ErrorWeightBgColor = "White";
         static public string ErrorWeightFgColor = "Red";
+        static public bool AllowWeightOverload = false;
     }
 }

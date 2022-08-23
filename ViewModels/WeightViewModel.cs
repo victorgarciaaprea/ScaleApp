@@ -244,11 +244,13 @@ namespace Scale.ViewModels
             }
         }
 
+        // weight overload support can be defined at the recipe item level or the recipe level itself
+        // recipe item takes precedence over recipe
+        // if none is specified, per app default value is used
         bool IsWeightOverloadAllowed()
         {
             var allowOverloadSetting = recipeItem.WeightSettings ?? recipe.WeightSettings;
-
-            return allowOverloadSetting?.AllowWeightOverload ?? false;
+            return allowOverloadSetting?.AllowWeightOverload ?? AppSettings.AllowWeightOverload;
         }
 
     }
