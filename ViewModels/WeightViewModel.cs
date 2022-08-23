@@ -75,13 +75,13 @@ namespace Scale.ViewModels
             }
 
             this.scale.ValueChanged += Scale_ValueChanged;
-            await this.scale.Start();
+            this.scale.Start();
         }
 
         private void Scale_ValueChanged(object? sender, EventArgs e)
         {
             var val = sender as IScale;
-            CurrentWeight = val.GetValue();
+            CurrentWeight = val.CurrentWeight;
             UpdateStatus();
         }
 
@@ -103,8 +103,9 @@ namespace Scale.ViewModels
             // if we just handled the last recipe item then we need to a "finished" recipe view
             if (itemCount == recipe.Items.Count)
             {
-                this.scale.ValueChanged -= Scale_ValueChanged;
-                ShowWeight = false;
+                this.scale.Stop();
+                //this.scale.ValueChanged -= Scale_ValueChanged;
+                ShowWeight = true;
                 BigButtonText = "Finalizar";
                 //mainWindowViewModel.NavigateTo(new LoginViewModel());
                 return;

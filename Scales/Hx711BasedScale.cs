@@ -10,14 +10,13 @@ using Unosquare.WiringPi;
 
 namespace Scale.Scales
 {
-    public class Hx711BasedScale : IScale
+    public class Hx711BasedScale : ScaleBase
     {
         private byte dout;
         private byte pd_sck;
         int referenceUnit;
-        int currentWeight;
-        public event EventHandler ValueChanged;
         HX711 hx;
+        CancellationTokenSource cancellationTokenSource;
 
         public Hx711BasedScale(byte dout, byte pd_sck, int referenceUnit)
         {
@@ -26,7 +25,20 @@ namespace Scale.Scales
             this.referenceUnit = referenceUnit;
         }
 
-        public async Task Start()
+        public async void Start()
+        {
+            cancellationTokenSource = new CancellationTokenSource();
+            CancellationToken ct = cancellationTokenSource.Token;
+            await StartInternal(ct);
+        }
+
+        public override void Stop()
+        {
+
+            cancellationTokenSource.Cancel();
+        }
+
+        public async Task StartInternal(CancellationToken ct)
         {
             Pi.Init<BootstrapWiringPi>();
             hx = new HX711(dout, pd_sck);
@@ -37,6 +49,11 @@ namespace Scale.Scales
 
             while (true)
             {
+                if (ct.IsCancellationRequested)
+                {
+                    break;
+                }
+
                 var val = hx.GetWeight(5);
                 hx.PowerDown();
                 hx.PowerUp();
@@ -45,11 +62,7 @@ namespace Scale.Scales
                 if (val >= -2 && val <= 2)
                     val = 0;
 
-                currentWeight = val;
-                if (ValueChanged != null)
-                {
-                    ValueChanged(this, new EventArgs());
-                }
+                OnValueChanged(val);
 
                 //dc.CurrentWeight = val;
                 //UpdateState(dc);
@@ -59,17 +72,12 @@ namespace Scale.Scales
 
         }
 
-        public int GetValue()
-        {
-            return currentWeight;
-        }
-
-        public void Reset()
+        public override void Reset()
         {
             hx.Reset();
         }
 
-        public void Tare()
+        public override void Tare()
         {
             hx.Tare();
         }
