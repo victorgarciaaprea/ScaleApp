@@ -59,7 +59,12 @@ namespace Scale.ViewModels
 
 
 
-            Content = new WeightViewModel(Program.GetSampleRecipe());
+            Content = new WeightViewModel(Program.GetSampleRecipe(), this);
+        }
+
+        public void NavigateTo(ViewModelBase view)
+        {
+            this.Content = view;
         }
     }
 }
