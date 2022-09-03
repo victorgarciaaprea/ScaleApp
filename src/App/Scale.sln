@@ -5,7 +5,11 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scale", "Scale.csproj", "{B919D348-9425-49CA-BE16-E259A9751324}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX711DotNet", "..\HX711DotNet\HX711DotNet\HX711DotNet.csproj", "{4C99ECC8-346C-4AC1-8A2E-414004A16D19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HX711DotNet", "..\..\..\HX711DotNet\HX711DotNet\HX711DotNet.csproj", "{4C99ECC8-346C-4AC1-8A2E-414004A16D19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scale.Models", "..\Scale.Models\Scale.Models.csproj", "{425D4818-218F-484F-940D-A441EE402D3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI", "..\CLI\CLI.csproj", "{2C067101-6569-45C9-BD10-E8B7012294B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{4C99ECC8-346C-4AC1-8A2E-414004A16D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C99ECC8-346C-4AC1-8A2E-414004A16D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C99ECC8-346C-4AC1-8A2E-414004A16D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{425D4818-218F-484F-940D-A441EE402D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{425D4818-218F-484F-940D-A441EE402D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{425D4818-218F-484F-940D-A441EE402D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{425D4818-218F-484F-940D-A441EE402D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C067101-6569-45C9-BD10-E8B7012294B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C067101-6569-45C9-BD10-E8B7012294B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C067101-6569-45C9-BD10-E8B7012294B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C067101-6569-45C9-BD10-E8B7012294B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

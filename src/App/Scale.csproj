@@ -29,7 +29,7 @@
 	<PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HX711DotNet\HX711DotNet\HX711DotNet.csproj" />
+    <ProjectReference Include="..\..\..\HX711DotNet\HX711DotNet\HX711DotNet.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\WeightView.axaml.cs">
