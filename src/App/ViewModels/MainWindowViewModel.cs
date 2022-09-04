@@ -58,8 +58,26 @@ namespace Scale.ViewModels
             //}
 
 
+            //Content = new WeightViewModel(Program.GetSampleWorkOrder(), this);
+            Content = new WorkOrderViewModel();
+        }
 
-            Content = new WeightViewModel(Program.GetSampleRecipe(), this);
+        public void SearchWorkOrder()
+        {
+            //int pin = 18;
+            //using var controller = new GpioController();
+            //controller.OpenPin(pin, PinMode.Output);
+            //bool ledOn = true;
+            //while (true)
+            //{
+            //    controller.Write(pin, ((ledOn) ? PinValue.High : PinValue.Low));
+            //    Thread.Sleep(1000);
+            //    ledOn = !ledOn;
+            //}
+
+
+            //Content = new WeightViewModel(Program.GetSampleWorkOrder(), this);
+            Content = new WorkOrderViewModel();
         }
 
         public void NavigateTo(ViewModelBase view)

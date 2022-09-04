@@ -30,17 +30,6 @@ namespace Scale.Views
 
         public async void OnClickChangeWeight(object? sender, RoutedEventArgs args)
         {
-            //var dc = DataContext as WeightViewModel;
-            //var random = new Random();
-
-            //dc.CurrentWeight = random.NextDouble();
-
-            var recipe = new DummyData().GetRecipe();
-
-            
-
-            //await ReadWeightFromScale();
-            return;
         }
 
         private byte dout = 5;

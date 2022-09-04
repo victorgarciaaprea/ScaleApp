@@ -21,7 +21,7 @@ namespace Scale.ViewModels
         string weightFgColor;
         string bigButtonText;
         RecipeItem recipeItem;
-        Recipe recipe;
+        WorkOrderPart workOrderPart;
         bool showWeight;
         int itemCount = 0;
         int previousWeight = 0;
@@ -30,22 +30,22 @@ namespace Scale.ViewModels
 
         public WeightViewModel()
         {
-            this.recipe = Program.GetSampleRecipe();
+            this.workOrderPart = Program.GetSampleWorkOrder();
             SetupParams();
         }
 
-        public WeightViewModel(Recipe recipe)
+        public WeightViewModel(WorkOrderPart workOrderPart)
         {
-            this.recipe = recipe;
-            if (recipe.Items.Count == 0)
+            this.workOrderPart = workOrderPart;
+            if (this.workOrderPart.Items.Count == 0)
             {
-                throw new ArgumentException("Recipe must contain at least one item");
+                throw new ArgumentException("Work Order must contain at least one part");
             }
 
             SetupParams();
         }
 
-        public WeightViewModel(Recipe recipe, MainWindowViewModel mainWindowViewModel) : this(recipe)
+        public WeightViewModel(WorkOrderPart workOrderPart, MainWindowViewModel mainWindowViewModel) : this(workOrderPart)
         {
             this.mainWindowViewModel = mainWindowViewModel;
         }
@@ -58,7 +58,7 @@ namespace Scale.ViewModels
             this.weightBgColor = AppSettings.WeightBgColor;
             this.weightFgColor = AppSettings.WeightFgColor;
             this.canContinue = false;
-            this.RecipeItem = this.recipe.Items[itemCount++];
+            this.RecipeItem = this.workOrderPart.Items[itemCount++];
 
             // create IScale from data in recipe (each recipe should tell us what scale to use)
             byte dout = 5;
@@ -101,7 +101,7 @@ namespace Scale.ViewModels
         public void GoNext()
         {
             // if we just handled the last recipe item then we need to a "finished" recipe view
-            if (itemCount == recipe.Items.Count)
+            if (itemCount == workOrderPart.Items.Count)
             {
                 this.scale.Stop();
                 //this.scale.ValueChanged -= Scale_ValueChanged;
@@ -116,7 +116,7 @@ namespace Scale.ViewModels
             scale.Tare();
             CurrentWeight = 0;
             // keep moving to the next recipe item
-            RecipeItem = recipe.Items[itemCount++];
+            RecipeItem = workOrderPart.Items[itemCount++];
         }
 
         public RecipeItem RecipeItem
@@ -250,8 +250,10 @@ namespace Scale.ViewModels
         // if none is specified, per app default value is used
         bool IsWeightOverloadAllowed()
         {
-            var allowOverloadSetting = recipeItem.WeightSettings ?? recipe.WeightSettings;
-            return allowOverloadSetting?.AllowWeightOverload ?? AppSettings.AllowWeightOverload;
+            // TODO: fix this
+            return false;
+            //var allowOverloadSetting = recipeItem.WeightSettings ?? workOrderPart.WeightSettings;
+            //return allowOverloadSetting?.AllowWeightOverload ?? AppSettings.AllowWeightOverload;
         }
 
     }

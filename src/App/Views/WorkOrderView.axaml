@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Scale.Views.WorkOrderView">
+  
+  <Border>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="48" />
+        <RowDefinition Height="1" />
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+      <Grid Grid.Row="0">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Height="40">
+          <Path Width="19.5" Height="28.5" Margin="20,0,12,0" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#2B579A" Data="F1 M 25,27L 46,19L 46,22.25L 28.5,29L 31.75,31.25L 51,23.75L 51,48.5L 31.75,57L 25,52L 25,27 Z "/>
+          <!--<Image Source="/Ruby;component/Backend/Icons/32x32/Normal/asset-banknote.png" Style="{StaticResource UserControlImageStyle}" ></Image>-->
+          <TextBlock Foreground="#2B579A" Text="ScaleLab" FontSize="20" Margin="8,2,0,0" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe WP" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,8,0">
+        </StackPanel>
+      </Grid>
+      <Grid Grid.Row="1" Background="#CCCCCC"></Grid>
+      <Grid Grid.Row="2">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Grid Grid.Column="2" Name="WorkOrderGrid" IsVisible="True" Width="380">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+              <!--<Image Source="Icons/employees-server.png" Height="64" Width="64" Margin="0,20,0,0" />-->
+              <Label Content="Order de Trabajo" Margin="0,4,0,12" HorizontalAlignment="Center" Foreground="Blue" FontSize="26"></Label>
+              <Grid Margin="0,0,0,8">
+                <TextBox Name="WorkOrderId" Text="{Binding Id}" IsEnabled="True" TabIndex="4" />
+              </Grid>
+              <Button Name="SearchWorkOrder" Click="bt_SearchWorkOrder" Content="Buscar" Width="100" Height="36" TabIndex="8" />
+              <Button Command="{Binding $parent[Window].DataContext.SearchWorkOrder}" Content="Test"/>
+            </StackPanel>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  </Border>
+</UserControl>

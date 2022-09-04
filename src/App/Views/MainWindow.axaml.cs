@@ -16,6 +16,10 @@ namespace Scale.Views
             AvaloniaXamlLoader.Load(this);
         }
 
+        public void NavigateTo(ViewModelBase view)
+        {
+            this.Content = view;
+        }
 
     }
 }

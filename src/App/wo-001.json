@@ -1,0 +1,41 @@
+{
+  "Recipe": null,
+  "Id": "4acbf3db-059f-44c0-8cfb-74849dda9bd0",
+  "ExternalId": "ot-2392",
+  "StartTime": "0001-01-01T00:00:00",
+  "EndTime": "0001-01-01T00:00:00",
+  "Status": 0,
+  "Parts": [
+    {
+      "StartTime": "0001-01-01T00:00:00",
+      "EndTime": "0001-01-01T00:00:00",
+      "PerformedBy": null,
+      "ExceptionBy": null,
+      "ExceptionReason": null,
+      "Items": [
+        {
+          "WeightSettings": {
+            "AllowOverload": true,
+            "AllowRemoval": null
+          },
+          "Name": "Alcohol",
+          "Description": null,
+          "Id": "40001A1",
+          "MinRequiredWeight": 1700,
+          "MaxAllowedWeight": 2000,
+          "IdealWeight": 1850
+        },
+        {
+          "WeightSettings": null,
+          "Name": "Potasio",
+          "Description": null,
+          "Id": "40002B5",
+          "MinRequiredWeight": 3500,
+          "MaxAllowedWeight": 4000,
+          "IdealWeight": 3750
+        }
+      ],
+      "ScaleId": "Ipeco01"
+    }
+  ]
+}
