@@ -13,6 +13,7 @@ class Program
     {
         Console.WriteLine("Scale CLI");
 
+        WriteScalesData();
         WriteWorkOrderData();
 
     }
@@ -21,7 +22,7 @@ class Program
     {
         var wo = new WorkOrder();
         wo.Id = Guid.NewGuid().ToString();
-        wo.Status = WorkOrderStatus.Created;
+        wo.Status = WorkOrderStatus.NotStarted;
         wo.ExternalId = "ot-2392";
         wo.Parts = new List<WorkOrderPart>();
         var part = new WorkOrderPart();

@@ -1,10 +1,10 @@
 {
   "Recipe": null,
-  "Id": "4acbf3db-059f-44c0-8cfb-74849dda9bd0",
+  "Id": "aec30cdb-1d45-4cc7-94af-79799e5169e6",
   "ExternalId": "ot-2392",
   "StartTime": "0001-01-01T00:00:00",
   "EndTime": "0001-01-01T00:00:00",
-  "Status": 0,
+  "Status": 1,
   "Parts": [
     {
       "StartTime": "0001-01-01T00:00:00",
@@ -35,7 +35,8 @@
           "IdealWeight": 3750
         }
       ],
-      "ScaleId": "Ipeco01"
+      "ScaleId": "Ipeco02",
+      "Status": 0
     }
   ]
 }

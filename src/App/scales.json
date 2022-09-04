@@ -1,0 +1,48 @@
+[
+  {
+    "Name": "Precision",
+    "Description": "Balanza de precision, hasta 300 gramos",
+    "Id": "Precision01",
+    "Type": "Prec",
+    "AdjustFactor": 0,
+    "MinWeight": 0,
+    "MaxWeight": 300,
+    "Tolerance": 0,
+    "LastCalibration": "2022-09-04T13:11:08.4377619-03:00",
+    "LoadCells": [
+      {
+        "Brand": "China",
+        "Model": "",
+        "Id": "300GR",
+        "Name": "Precision",
+        "Description": "Hasta 300 gramos",
+        "MaxWeight": 300
+      }
+    ],
+    "ClockLine": 0,
+    "DataLine": 0
+  },
+  {
+    "Name": "IPeCo",
+    "Description": "Balanza hasta 5kg",
+    "Id": "Ipeco01",
+    "Type": "Std",
+    "AdjustFactor": 0,
+    "MinWeight": 0,
+    "MaxWeight": 5000,
+    "Tolerance": 0,
+    "LastCalibration": "2022-09-04T13:11:08.4399771-03:00",
+    "LoadCells": [
+      {
+        "Brand": "IPeCo",
+        "Model": "50",
+        "Id": "5KG",
+        "Name": "TP",
+        "Description": "Hasta 5000 gramos",
+        "MaxWeight": 5000
+      }
+    ],
+    "ClockLine": 0,
+    "DataLine": 0
+  }
+]

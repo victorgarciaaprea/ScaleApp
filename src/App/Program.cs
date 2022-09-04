@@ -9,6 +9,8 @@ namespace Scale
 {
     class Program
     {
+        internal static ScaleManager ScaleManager = new ScaleManager();
+
         // Initialization code. Don't use any Avalonia, third-party APIs or any
         // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
         // yet and stuff might break.
@@ -41,18 +43,5 @@ namespace Scale
             return wo.Parts[0];
         }
 
-        internal static WorkOrder SearchForWorkOrder(string workOrderId)
-        {
-            var content = File.ReadAllText("wo-001.json");
-            var wo = JsonSerializer.Deserialize(content, typeof(WorkOrder)) as WorkOrder;
-            if (wo.Id == workOrderId)
-            {
-                return wo;
-            }
-            else
-            {
-                return null;
-            }
-        }
     }
 }

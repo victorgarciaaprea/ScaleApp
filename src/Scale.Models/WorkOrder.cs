@@ -31,10 +31,15 @@ namespace Scale.Models
         public string ExceptionReason { get; set; }
         public List<RecipeItem> Items { get; set; }
         public string ScaleId { get; set; }
+        public WorkOrderStatus Status { get; set; }
     }
 
     public enum WorkOrderStatus
     {
-        Created, InProgress, Completed, Aborted, Failed, Deleted
+        NotStarted, InProgress, Completed, Failed, Aborted, Deleted
+    }
+    public enum WorkOrderPartStatus
+    {
+        NotStarted, InProgress, Completed, Failed
     }
 }

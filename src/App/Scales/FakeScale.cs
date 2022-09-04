@@ -22,7 +22,7 @@ namespace Scale.Scales
                 {
                     break;
                 }
-                var newValue = new Random().Next(0, 10000);
+                var newValue = new Random().Next(0, 5000);
                 OnValueChanged(newValue);
                 await Task.Delay(1000);
             }
